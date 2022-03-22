@@ -1,50 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
 import React, { useState } from 'react';
 import Calendar from './components/calendar';
-
+import Main from './components/main'
 
 function App() {
+  const button = ['Go to main', 'Go to calendar'];
 
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+  const [buttonState, setButtonState] = useState(button[1]);
 
   const toggleCalendar = () => {
     setIsCalendarOpen(!isCalendarOpen);
+    setButtonState(() => {
+      if(buttonState === button[0]) {
+        setButtonState(button[1]);
+      } else {
+        setButtonState(button[0]);
+      }
+    });
   };
+
+  const renderItem = () => {
+    switch (buttonState) {
+      case 'Go to main':
+        return <Calendar />
+      case 'Go to calendar':
+        return <Main />
+
+    }
+  }
   
   return (
     <div className="App">
-      {{isCalendarOpen} ? (
-        <Calendar 
-          isCalendarOpen={isCalendarOpen}
-          toggleCalendar={toggleCalendar}/>
-      ) : (
-        <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to my React calendar app.
-        </p>
-        <button onClick={() => {
-          toggleCalendar();
-        }}>
-          Go to Calendar
-        </button>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      )}
-      
+      <button onClick={toggleCalendar}>
+        {buttonState}
+      </button>      
       <main>
-      
+        {renderItem(buttonState)}
       </main>
     </div>
-  );
+  )
 }
 
 export default App;
