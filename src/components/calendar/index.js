@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState}  from 'react';
+import Modal from '../modal';
 
 function Calendar () {
-    
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 
                     'July', 'August', 'September', 'November', 'December'];
     const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -15,7 +15,7 @@ function Calendar () {
         case 1:
             var leapYear = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
             days = leapYear ? 29 : 28;
-            break
+            break;
         case 3: case 5: case 8: case 10:
             days = 30;
             break;
@@ -28,8 +28,21 @@ function Calendar () {
     var getDayOfFirstOfMonth = firstOfMonth.getDay();
     var emptyDays = Array.from({length: getDayOfFirstOfMonth}, (v, i) => i);
     
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentDay, setCurrentDay] = useState();
+    
+    const toggleModal = (day) => {
+        setCurrentDay(month + ' ' + day +', ' + date.getFullYear());
+        setIsModalOpen(!isModalOpen);
+    }   
+
     return (
         <div className="calendar-wrapper">
+            {isModalOpen && (
+                <Modal 
+                    currentDay={currentDay}
+                    onClose={toggleModal}/>
+            )}
             <div className='calendar-month'>
                 <section className='calendar-header'>
                     <h3>{month}</h3>
@@ -53,6 +66,8 @@ function Calendar () {
                     {arr.map(day => (
                         <div
                             key={day+1}
+                            onClick={() => {
+                                toggleModal(day+1)}}
                         >
                             {day+1}
                         </div>
