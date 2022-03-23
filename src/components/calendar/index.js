@@ -22,7 +22,7 @@ function Calendar () {
         default:
             days = 31;
     }
-    var arr = Array.from({length: days-1}, (v, i) => i);
+    var arr = Array.from({length: days}, (v, i) => i);
 
     var firstOfMonth = new Date(month + ' 1, ' + date.getFullYear());
     var getDayOfFirstOfMonth = firstOfMonth.getDay();
@@ -61,8 +61,7 @@ function Calendar () {
                     {emptyDays.map(empty => (
                         <div key={empty}></div>
                     ))}
-                    {/* map days in month based on current month */}
-                        
+                    {/* map days in month based on current month */} 
                     {arr.map(day => (
                         <div
                             key={day+1}
