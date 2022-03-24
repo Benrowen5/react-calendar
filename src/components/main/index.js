@@ -5,7 +5,7 @@ import '../../App.css';
 function Main () {
     
     return (
-        <header className="App-header">
+        <section className="App-header">
             <h1>
                 Welcome to my React calendar app.
             </h1>
@@ -20,7 +20,7 @@ function Main () {
             >
             Learn React
             </a>
-        </header>
+        </section>
     )
 }
 

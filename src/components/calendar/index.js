@@ -1,4 +1,4 @@
-import React, { useState}  from 'react';
+import React, { useEffect, useState}  from 'react';
 import Modal from '../modal';
 
 function Calendar () {
@@ -35,7 +35,7 @@ function Calendar () {
     const toggleModal = (day) => {
         setCurrentDay(month + ' ' + day +', ' + year);
         setIsModalOpen(!isModalOpen);
-    }   
+    }
 
     return (
         <div className="calendar-wrapper">
@@ -60,11 +60,12 @@ function Calendar () {
                 <section className="dates">
                     {/* map empty days to start day in month on correct day of week */}
                     {emptyDays.map(empty => (
-                        <div key={empty}></div>
+                        <div key={empty} className="empty"></div>
                     ))}
                     {/* map days in month based on current month */} 
                     {arr.map(day => (
                         <div
+                            id={day+1}
                             key={day+1}
                             onClick={() => {
                                 toggleModal(day+1)}}

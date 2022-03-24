@@ -36,12 +36,11 @@ function App() {
           className="calendar-btn"
           onClick={toggleCalendar}>
           {buttonState}
-        </button>      
-        <main>
-          {renderItem(buttonState)}
-        </main> 
-      </header>
-      
+        </button>
+      </header>      
+      <main>
+        {renderItem(buttonState)}
+      </main>     
     </div>
   )
 }
