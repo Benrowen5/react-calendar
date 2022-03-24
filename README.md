@@ -1,13 +1,32 @@
-# Getting Started with Create React App
+# react-calendar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  ![License](https://img.shields.io/badge/license-MIT-blue)
+  
+  ## Description
+  This application is an interactive and responsive calendar which allows users to create and save notes/tasks for any given day of the month. The app was built using React and uses the browsers local storage to save and retieve user data.
 
-## Available Scripts
+  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
+  
+  Deployed application: Not yet deployed.
 
-In the project directory, you can run:
+  <!-- screenshot -->
+
+  
+  ***************************************************************
+  ## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+***************************************************************
+## Installation
+Clone from GitHub, run 'npm i' to install dependencies in the root of the project. 
+  
+## Usage
 
 ### `npm start`
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -38,33 +57,18 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+  
+## License
+  This project is covered under the MIT license. 
+      For details, visit: https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt
+  
+## Contributing
+  Not accepting any contributions for this project.
 
-## Learn More
+## Tests
+  No current tests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Questions
+  For any questions regarding this project, please contact me via email (Benrowentv@gmail.com).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  Check out my other project repositories on Github at: [Benrowen5](https://www.github.com/Benrowen5)
