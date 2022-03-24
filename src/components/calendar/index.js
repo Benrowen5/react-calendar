@@ -8,8 +8,9 @@ function Calendar () {
 
     var date = new Date();
     var month = months[date.getMonth()];
+    var year = date.getFullYear();
     var days;
-    var year = date.getFullYear;
+    
     switch (month) {
         // February
         case 1:
@@ -24,7 +25,7 @@ function Calendar () {
     }
     var arr = Array.from({length: days}, (v, i) => i);
 
-    var firstOfMonth = new Date(month + ' 1, ' + date.getFullYear());
+    var firstOfMonth = new Date(month + ' 1, ' + year);
     var getDayOfFirstOfMonth = firstOfMonth.getDay();
     var emptyDays = Array.from({length: getDayOfFirstOfMonth}, (v, i) => i);
     
@@ -32,7 +33,7 @@ function Calendar () {
     const [currentDay, setCurrentDay] = useState();
     
     const toggleModal = (day) => {
-        setCurrentDay(month + ' ' + day +', ' + date.getFullYear());
+        setCurrentDay(month + ' ' + day +', ' + year);
         setIsModalOpen(!isModalOpen);
     }   
 

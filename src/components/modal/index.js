@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function Modal ({onClose, currentDay}) {
+
+    useEffect(() => {
+        let note = localStorage.getItem(currentDay);
+        document.querySelector('#input').textContent = note;
+    });
+
+    function saveNote(currentDay) {
+        // get note and save to local storage with key of current day
+        var input = document.querySelector('#input').value;
+        localStorage.setItem(currentDay, input);
+    };
+
     return (
         <div className='modalBackdrop'>
             <div className='modalContainer'>
@@ -8,8 +20,14 @@ function Modal ({onClose, currentDay}) {
                 <p>
                     Notes for the day:
                 </p>
-                <textarea className="note-textarea" placeholder="Note Text"></textarea>
-                <button>Save Notes</button>
+                <form>
+                    <textarea id="input" className="note-textarea" placeholder="No notes yet!"></textarea>
+                </form>
+                <button 
+                    onClick={() => {saveNote(currentDay)}}
+                >
+                    Save Notes
+                </button>
                 <button onClick={onClose} type='button' className="btn btn-secondary">
                     Go Back
                 </button>
