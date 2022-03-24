@@ -7,6 +7,11 @@ function Modal ({onClose, currentDay}) {
         document.querySelector('#input').textContent = note;
     });
 
+    function deleteNote(currentDay) {
+        localStorage.removeItem(currentDay);
+        document.querySelector('#input').textContent = '';
+    };
+    
     function saveNote(currentDay) {
         // get note and save to local storage with key of current day
         var input = document.querySelector('#input').value;
@@ -28,8 +33,16 @@ function Modal ({onClose, currentDay}) {
                 >
                     Save Notes
                 </button>
-                <button onClick={onClose} type='button' className="btn btn-secondary">
+                <button 
+                    onClick={onClose}
+                    className="btn btn-secondary"
+                >
                     Go Back
+                </button>
+                <button
+                    onClick={() => {deleteNote(currentDay)}}
+                >
+                    Delete Notes
                 </button>
             </div>
         </div>
