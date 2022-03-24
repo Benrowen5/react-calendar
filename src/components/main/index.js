@@ -10,6 +10,7 @@ function Main () {
                 Welcome to my React calendar app.
             </h1>
             <p>Click the button to go to the calendar.</p>
+            <p>This application is an interactive calendar which allows users to save notes or tasks to any day of the month.</p>
             <img src={logo} className="App-logo" alt="logo" />
             <a
                 className="App-link"

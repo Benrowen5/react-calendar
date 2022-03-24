@@ -31,12 +31,17 @@ function App() {
   
   return (
     <div className="App">
-      <button onClick={toggleCalendar}>
-        {buttonState}
-      </button>      
-      <main>
-        {renderItem(buttonState)}
-      </main>
+      <header>
+        <button 
+          className="calendar-btn"
+          onClick={toggleCalendar}>
+          {buttonState}
+        </button>      
+        <main>
+          {renderItem(buttonState)}
+        </main> 
+      </header>
+      
     </div>
   )
 }
