@@ -37,6 +37,18 @@ function Calendar () {
         setIsModalOpen(!isModalOpen);
     }
 
+    // useEffect to style days on calendar based on if notes are saved for the day
+    useEffect(() => {
+        var keys = Object.keys(localStorage);
+        // loop through localStorage keys for items matching days of the month
+        for (let i=0;i<keys.length;i++) {
+            if (keys[i].match(month)) {
+                document.getElementById(keys[i])
+                    .setAttribute('style', 'background: grey;');
+            }
+        }
+    });
+
     return (
         <div className="calendar-wrapper">
             {isModalOpen && (
@@ -65,7 +77,7 @@ function Calendar () {
                     {/* map days in month based on current month */} 
                     {arr.map(day => (
                         <div
-                            id={day+1}
+                            id={`${month} ${day+1}, ${year}`}
                             key={day+1}
                             onClick={() => {
                                 toggleModal(day+1)}}
